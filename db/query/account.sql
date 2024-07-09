@@ -16,3 +16,8 @@ WHERE id = $1 LIMIT 1;
 -- name: ListAccounts :many
 SELECT * FROM accounts
 ORDER BY id;
+
+-- name: UpdateAccount :exec
+UPDATE accounts
+  set balance = $2
+WHERE id = $1;
